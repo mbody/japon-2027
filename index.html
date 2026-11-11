@@ -88,21 +88,20 @@ svg.map{display:block;width:100%;min-width:780px;height:auto}
 .tag.ev{border-color:var(--accent);color:var(--accent)}
 .it h3{margin:0;font-size:15px;font-weight:600;line-height:1.3}
 .it p{margin:0;color:var(--muted);font-size:13.5px;text-wrap:pretty}
+.it{overflow:hidden}
+.it .pic{margin:-12px -14px 6px}
+.it .pic img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--line)}
+.it .cr{margin-top:auto;padding-top:6px;font-size:10.5px;line-height:1.35;color:var(--muted)}
+.it .cr a{color:inherit;text-underline-offset:2px}
 .empty{padding:18px;border:1px dashed var(--line);border-radius:8px;color:var(--muted)}
 .tip{border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:13.5px;max-width:80ch}
 .tip b{color:var(--ink)}
 .nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .nav button{font:inherit;font-size:13.5px;font-weight:500;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:8px 14px;cursor:pointer}
 .nav button[disabled]{opacity:.35;cursor:default}
-.headrow{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
-.headrow>.ph{flex:1 1 300px;min-width:0}
-.hero{flex:0 1 400px;margin:0;min-width:0;width:100%}
-.hero img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:8px;background:var(--line)}
-.hero figcaption{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.4}
-.hero figcaption a{color:inherit;text-underline-offset:2px}
 .photos{font-size:13.5px}.photos a{color:var(--route);font-weight:500;text-underline-offset:3px}
 .foot{font-size:12.5px;color:var(--muted);max-width:80ch}
-@media (max-width:560px){.panel{padding:16px}.it{padding:11px 12px}}
+@media (max-width:560px){.panel{padding:16px}.it{padding:11px 12px}.it .pic{margin:-11px -12px 6px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -145,7 +144,7 @@ svg.map{display:block;width:100%;min-width:780px;height:auto}
 (function(){
 var DOM={art:{n:'Art',c:'var(--art)'},craft:{n:'Artisanat',c:'var(--craft)'},nature:{n:'Nature',c:'var(--nature)'},culture:{n:'Culture',c:'var(--culture)'}};
 var STAGES=[
-{id:'tokyo',photo:{c:'Sensō-ji, Asakusa',a:'Guilhem Vellut',l:'CC BY 2.0',lu:'https://creativecommons.org/licenses/by/2.0/',f:'Senso-ji_Temple_@_Asakusa_(14019477806).jpg'},q:'Tokyo Asakusa Senso-ji',n:1,name:'Tokyo',jp:'東京',lon:139.69,lat:35.69,dates:'3 – 7 juillet',nights:4,
+{id:'tokyo',q:'Tokyo Asakusa Senso-ji',n:1,name:'Tokyo',jp:'東京',lon:139.69,lat:35.69,dates:'3 – 7 juillet',nights:4,
  from:'Arrivée à l\'aéroport de Haneda ou de Narita.',lab:[16,2,'start'],
  tip:'<b>À savoir :</b> beaucoup de musées ferment le lundi (le 5 juillet) : prévoyez teamLab, une excursion ou une balade ce jour-là. Le musée Ghibli ferme le mardi et ses billets se vendent le 10 du mois précédent.',
  items:[
@@ -161,7 +160,7 @@ var STAGES=[
  {d:'nature',t:'Vallée de Todoroki',x:'Un ravin forestier au milieu de Setagaya, frais et silencieux.',h:1},
  {d:'culture',t:'Asakusa et Sensō-ji',x:'À voir tôt le matin, avant les groupes.'}
  ]},
-{id:'matsumoto',photo:{c:'Le château de Matsumoto',a:'663highland',l:'CC BY 2.5',lu:'https://creativecommons.org/licenses/by/2.5/',f:'130608_Matsumoto_Castle_Matsumoto_Nagano_pref_Japan01bs5.jpg'},q:'Matsumoto Castle',n:2,name:'Matsumoto',jp:'松本・上高地',lon:137.97,lat:36.24,dates:'7 – 9 juillet',nights:2,
+{id:'matsumoto',q:'Matsumoto Castle',n:2,name:'Matsumoto',jp:'松本・上高地',lon:137.97,lat:36.24,dates:'7 – 9 juillet',nights:2,
  from:'Train Azusa depuis Shinjuku, environ 2 h 40.',lab:[16,4,'start'],
  tip:'<b>À savoir :</b> Kamikochi se visite à la journée en bus depuis Matsumoto. À 1 500 m d\'altitude, il y fait environ 20 °C : c\'est le moment le plus frais du voyage.',
  items:[
@@ -172,7 +171,7 @@ var STAGES=[
  {d:'nature',t:'Kamikochi',x:'Vallée alpine le long de la rivière Azusa, pont Kappa-bashi, sentiers plats face au mont Hotaka.'},
  {d:'nature',t:'Étang sacré de Myōjin-ike',x:'Une heure de marche au-delà du pont : plus calme et très beau par temps clair.',h:1}
  ]},
-{id:'kiso',photo:{c:'Tsumago, sur la route Nakasendō',a:'Gryffindor',l:'CC BY-SA 3.0',lu:'https://creativecommons.org/licenses/by-sa/3.0/',f:'Tsumago_2009_4.JPG'},q:'Tsumago Nakasendo',n:3,name:'Vallée de Kiso',jp:'木曽路・妻籠',lon:137.6,lat:35.58,dates:'9 – 10 juillet',nights:1,
+{id:'kiso',q:'Tsumago Nakasendo',n:3,name:'Vallée de Kiso',jp:'木曽路・妻籠',lon:137.6,lat:35.58,dates:'9 – 10 juillet',nights:1,
  from:'Train jusqu\'à Narai (30 min), puis vers Nagiso pour Tsumago.',lab:[16,4,'start'],
  tip:'<b>À savoir :</b> faites expédier vos valises à Takayama par takkyūbin et marchez léger. Tsumago interdit les voitures dans sa rue principale.',
  items:[
@@ -181,7 +180,7 @@ var STAGES=[
  {d:'culture',t:'Tsumago et nuit en minshuku',x:'Village préservé, tatamis, dîner familial et bain avec les voisins.',h:1},
  {d:'nature',t:'Marche Magome–Tsumago',x:'Environ 8 km et 2 h 30 entre cèdres, cascades et hameaux, avec des cloches à ours en chemin.'}
  ]},
-{id:'takayama',photo:{c:'Le quartier de Sanmachi, Takayama',a:'663highland',l:'CC BY-SA 4.0',lu:'https://creativecommons.org/licenses/by-sa/4.0/',f:'090919_Sanmachi_Takayama_Japan01s3.jpg'},q:'Takayama Sanmachi',n:4,name:'Takayama',jp:'高山',lon:137.25,lat:36.14,dates:'10 – 12 juillet',nights:2,
+{id:'takayama',q:'Takayama Sanmachi',n:4,name:'Takayama',jp:'高山',lon:137.25,lat:36.14,dates:'10 – 12 juillet',nights:2,
  from:'Environ 4 h depuis Tsumago, avec changement à Nagoya puis la ligne Hida.',lab:[0,26,'middle'],
  tip:'<b>À savoir :</b> la ville est l\'étape artisanale des montagnes. Notez les ateliers qui acceptent les visites avant de partir.',
  items:[
@@ -191,7 +190,7 @@ var STAGES=[
  {d:'culture',t:'Hida no Sato',x:'Village de fermes à toit de chaume déplacées, moins fréquenté que Shirakawa-go.'},
  {d:'craft',t:'Hida-Furukawa',x:'Canal aux carpes koï, charpentiers et boutique de bougies traditionnelles.',h:1}
  ]},
-{id:'kanazawa',photo:{c:'Le jardin Kenrokuen',a:'Oilstreet',l:'CC BY 2.5',lu:'https://creativecommons.org/licenses/by/2.5/',f:'Kenrokuen01-r.jpg'},q:'Kenrokuen Kanazawa',n:5,name:'Kanazawa',jp:'白川郷・金沢',lon:136.65,lat:36.56,dates:'12 – 14 juillet',nights:2,
+{id:'kanazawa',q:'Kenrokuen Kanazawa',n:5,name:'Kanazawa',jp:'白川郷・金沢',lon:136.65,lat:36.56,dates:'12 – 14 juillet',nights:2,
  from:'Bus de Takayama à Shirakawa-go (50 min), puis à Kanazawa (1 h 15). À réserver.',lab:[-16,4,'end'],
  tip:'<b>À savoir :</b> la péninsule de Noto, au nord, se remet encore du séisme de 2024. Je ne la mets pas au programme.',
  items:[
@@ -204,7 +203,7 @@ var STAGES=[
  {d:'craft',t:'Porcelaine de Kutani',x:'Rouges et verts profonds. Musée régional des produits artisanaux traditionnels.',h:1},
  {d:'culture',t:'Higashi-chaya et marché Omicho',x:'Quartier de maisons de thé et marché du poisson.'}
  ]},
-{id:'kyoto',photo:{c:'Le Gion Matsuri, Kyoto',a:'Jakub Hałun',l:'CC BY-SA 4.0',lu:'https://creativecommons.org/licenses/by-sa/4.0/',f:'Kyoto_Gion_Matsuri_20100716_2544.jpg'},q:'Kyoto Gion Matsuri',n:6,name:'Kyoto',jp:'京都',lon:135.77,lat:35.01,dates:'14 – 19 juillet',nights:5,
+{id:'kyoto',q:'Kyoto Gion Matsuri',n:6,name:'Kyoto',jp:'京都',lon:135.77,lat:35.01,dates:'14 – 19 juillet',nights:5,
  from:'Train depuis Kanazawa, environ 2 h 15.',lab:[-16,4,'end'],
  tip:'<b>À savoir :</b> il fait très chaud : Fushimi Inari et Arashiyama le matin à l\'ouverture, musées et ateliers en milieu de journée. Réservez tôt les chambres pendant le Gion.',
  items:[
@@ -222,7 +221,7 @@ var STAGES=[
  {d:'culture',t:'Nara',x:'Tōdai-ji, ses daims, et les lanternes de Kasuga Taisha. Excursion d\'une journée.'},
  {d:'craft',t:'Uji et Shigaraki',x:'Thé matcha à Uji. Céramique de Shigaraki et musée Miho, pour les amateurs.',h:1}
  ]},
-{id:'naoshima',photo:{c:'Le musée Chichu, Naoshima',a:'663highland',l:'CC BY 2.5',lu:'https://creativecommons.org/licenses/by/2.5/',f:'150505_Chichu_Art_Museum_Naoshima_Island_Kagawa_pref_Japan01s3.jpg'},q:'Naoshima Chichu Art Museum',n:7,name:'Naoshima',jp:'直島・豊島',lon:133.99,lat:34.46,dates:'19 – 21 juillet',nights:2,
+{id:'naoshima',q:'Naoshima Chichu Art Museum',n:7,name:'Naoshima',jp:'直島・豊島',lon:133.99,lat:34.46,dates:'19 – 21 juillet',nights:2,
  from:'Train jusqu\'à Okayama, puis ligne Uno et bateau. Environ 3 h 30.',lab:[0,30,'middle'],
  tip:'<b>À savoir :</b> Chichu ferme le lundi et le musée de Teshima le mardi. Réservez les billets à l\'avance. Naoshima est vallonnée : louez des vélos électriques.',
  items:[
@@ -233,7 +232,7 @@ var STAGES=[
  {d:'art',t:'Musée d\'art de Teshima',x:'Une goutte d\'eau en béton où l\'eau court sur le sol. Ouvert le matin du 21 juillet.',h:1},
  {d:'nature',t:'Mer intérieure de Seto',x:'Îles, ferrys et plages entre deux visites.'}
  ]},
-{id:'hiroshima',photo:{c:'Le torii d\'Itsukushima, Miyajima',a:'Jakub Hałun',l:'CC BY 4.0',lu:'https://creativecommons.org/licenses/by/4.0/',f:'Itsukushima-jinja_torii,_Miyajima,_Japan,_20240816_1716_4048.jpg'},q:'Itsukushima torii Miyajima',n:8,name:'Hiroshima',jp:'広島・宮島',lon:132.46,lat:34.39,dates:'21 – 22 juillet',nights:1,
+{id:'hiroshima',q:'Itsukushima torii Miyajima',n:8,name:'Hiroshima',jp:'広島・宮島',lon:132.46,lat:34.39,dates:'21 – 22 juillet',nights:1,
  from:'Ferry vers Uno, puis train via Okayama. Environ 3 h.',lab:[16,4,'start'],
  tip:'<b>À savoir :</b> à Miyajima, le torii flotte à marée haute. Consultez les horaires de marée avant de choisir l\'heure de la visite. Variante : remplacer cette étape par Okayama et Kurashiki (musée Ohara, jardin Kōraku-en, rue du denim de Kojima).',
  items:[
@@ -243,7 +242,7 @@ var STAGES=[
  {d:'nature',t:'Jardin Shukkei-en',x:'Un paysage miniature du XVIIe siècle autour d\'un étang.',h:1},
  {d:'culture',t:'Okonomiyaki de Hiroshima',x:'La version en couches avec nouilles, à goûter en soirée.'}
  ]},
-{id:'osaka',photo:{c:'Dōtonbori, Osaka',a:'Oilstreet',l:'CC BY 2.5',lu:'https://creativecommons.org/licenses/by/2.5/',f:'Dotonbori_Osaka_Japan01-r.jpg'},q:'Osaka Dotonbori',n:9,name:'Osaka',jp:'大阪',lon:135.5,lat:34.69,dates:'22 – 23 juillet',nights:1,
+{id:'osaka',q:'Osaka Dotonbori',n:9,name:'Osaka',jp:'大阪',lon:135.5,lat:34.69,dates:'22 – 23 juillet',nights:1,
  from:'Shinkansen jusqu\'à Shin-Osaka, environ 1 h 30.',lab:[-16,6,'end'],
  tip:'<b>À savoir :</b> le Tenjin Matsuri a lieu le 24-25 juillet, le lendemain de votre vol. En décalant le retour d\'un jour, vous le verriez. Variante nature : remplacer cette nuit par une nuit en temple à Kōya-san, avec cuisine bouddhiste et marche nocturne dans le cimetière d\'Okunoin.',
  items:[
@@ -254,6 +253,7 @@ var STAGES=[
  {d:'nature',t:'Kōya-san (variante)',x:'Nuit en temple, repas végétarien, cimetière d\'Okunoin à 800 m d\'altitude.',h:1}
  ]}
 ];
+var PH={"tokyo:0":["Tokyo National Museum, Honkan 2010.jpg","Wiiii","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],"tokyo:1":["Nezu Museum Garden view 201805.jpg","Wpcpey","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"tokyo:2":["Nihon mingeikan meguro 2009.JPG","Kamemaru2000","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],"tokyo:3":["2018 Sumida Hokusai Museum 2.jpg","Kakidai","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"tokyo:4":["Kappabashi-dori streetcorner (Kitchen town - southern end) a sunny morning in Tokyo Japan.jpg","Basile Morin","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"tokyo:5":["Yanaka Ginza 2.jpg","Christophe95","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"tokyo:6":["Photos at teamlab planets tokyo.jpg","Sasa0403","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"tokyo:7":["Ghibli Museum, Mitaka, Tokyo, 20240823 1131 5545.jpg","Jakub Hałun","CC BY 4.0","https://creativecommons.org/licenses/by/4.0"],"tokyo:8":["Takao-san hike during winter 18.jpg","Syced","CC0","https://creativecommons.org/publicdomain/zero/1.0/deed.en"],"tokyo:9":["Todoroki Valley @ Setagaya (13796512453).jpg","Guilhem Vellut","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"tokyo:10":["Senso-ji Kaminarimon 6.jpg","Zairon","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"matsumoto:0":["Matsumoto Castle05s5s4592.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"matsumoto:1":["Matsumoto city museum of art07nt3200.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"matsumoto:2":["Matsumoto Folkcraft Museum.jpg","Qurren","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],"matsumoto:3":["Nakamachi street Matsumoto Nagano pref Japan07n.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"matsumoto:4":["150920 Kappa-bashi Kamikochi Japan01n.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"matsumoto:5":["150920 Myojin-ike Kamikochi Japan06n.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"kiso:0":["Narai-juku-facing-north-east-2019-Luka-Peternel.jpg","Luka Peternel","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"kiso:1":["Kiso-Hirasawa06s5s3200.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"kiso:2":["Tsumago-juku 妻籠宿 aerial panorama.jpg","BobTanGo","CC BY 4.0","https://creativecommons.org/licenses/by/4.0"],"kiso:3":["Nakasendo between Tsumago and Magome - Nov 2005.jpg","","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0/"],"takayama:0":["Takayama Old Town (Sanmachi Suji) (35819349621).jpg","Ankur P","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"takayama:1":["Hida-Takayama Miyagawa Morning Market (15668520238).jpg","bryan...","CC BY-SA 2.0","https://creativecommons.org/licenses/by-sa/2.0"],"takayama:3":["Hida Folk Village, Hida no Sato, Japan.jpg","Protolanguage17","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"takayama:4":["瀬戸川の鯉.jpg","Waackapple","CC BY 4.0","https://creativecommons.org/licenses/by/4.0"],"kanazawa:0":["Gassho-zukuri farmhouse-01.jpg","Bernard Gagnon","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],"kanazawa:1":["Ainokura in Gokayama area.jpg","minque","Public domain",""],"kanazawa:2":["Kenrokuen linterna fall.JPG","Daderot","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0/"],"kanazawa:3":["Yasuekinpakukogeikan003.jpg","金沢市","CC BY 2.1 jp","https://creativecommons.org/licenses/by/2.1/jp/deed.en"],"kanazawa:4":["21st Century Museum of Contemporary Art, Kanazawa011.jpg","金沢市","CC BY 2.1 jp","https://creativecommons.org/licenses/by/2.1/jp/deed.en"],"kanazawa:5":["D. T. Suzuki Museum, Kanazawa - May 3, 2015 (1).jpg","Masayuki (Yuki) Kawagishi","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"kanazawa:6":["Kutani-Ware Plate, late 17th century, Japan, porcelain with enamel - Art Institute of Chicago - DSC00224.JPG","Daderot","CC0","https://creativecommons.org/publicdomain/zero/1.0/deed.en"],"kanazawa:7":["Higashi Chaya district, Kanazawa (3810704024).jpg","Andrea Schaffer","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"kyoto:0":["Gion Matsuri Float 1.jpg","Immanuelle","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"kyoto:1":["Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg","Basile Morin","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"kyoto:2":["Bamboo Forest, Arashiyama, Kyoto, Japan.jpg","Basile Morin","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"kyoto:3":["Daisen-in-1999-100.jpg","Bigjap","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],"kyoto:4":["Kawai Kanjiro's House, Kyoto.jpg","Nicholas & Debra Jewell","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"kyoto:5":["Kyoto Nishijin Textile show.jpg","lesteph","CC BY-SA 2.0","https://creativecommons.org/licenses/by-sa/2.0"],"kyoto:7":["Kibune Kawadoko01s5s4272.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"kyoto:8":["Goten-mon gate, Sanzen-in, Ohara, Kyoto - Jun 7, 2011.jpg","t-mizo","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"kyoto:9":["Shugakuin Imperial Villa Upper Garden Bridge.jpg","SRP1998","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"kyoto:10":["Saihoji Temple moss gardens, Kyoto (6289621641).jpg","Bryan Ledgard","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"kyoto:11":["Deer at Todaiji (4).jpg","Immanuel Giel","CC0","https://creativecommons.org/publicdomain/zero/1.0/deed.en"],"kyoto:12":["Byodoin Phoenix Hall Uji 2009.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"naoshima:0":["Chichu art museum02s2560.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"naoshima:1":["Lee Ufan Museum (26785053915).jpg","KimonBerlin","CC BY-SA 2.0","https://creativecommons.org/licenses/by-sa/2.0"],"naoshima:3":["Naoshima968.jpg","Nanosanchez","Public domain",""],"naoshima:4":["Teshima Museum Ryue Nishizawa Rei Naito 1.JPG","Epiq","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],"naoshima:5":["Islands in Seto Inland Sea (6453263227).jpg","Maarten Heerlien","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"hiroshima:0":["A-Bomb Dome.jpg","Dan Smith","CC BY-SA 2.5","https://creativecommons.org/licenses/by-sa/2.5"],"hiroshima:1":["Itsukushima-jinja torii at sunset, Miyajima, Japan, 20240816 1812 4144.jpg","Jakub Hałun","CC BY 4.0","https://creativecommons.org/licenses/by/4.0"],"hiroshima:2":["Mount Misen shrine (Miyajima) - DSC02085.JPG","Daderot","CC0","https://creativecommons.org/publicdomain/zero/1.0/deed.en"],"hiroshima:3":["20100722 Hiroshima Shukkeien 4387.jpg","Jakub Hałun","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"hiroshima:4":["Prepared okonomiyaki in Hiroshima.jpg","EllieBellie25","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"osaka:0":["Dotonbori Neon Sign, Osaka 20190415 1.jpg","DXR","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],"osaka:1":["Osaka Castle 02bs3200.jpg","663highland","CC BY 2.5","https://creativecommons.org/licenses/by/2.5"],"osaka:2":["Shinsekai and Tsutenkaku Tower.jpg","Sakai Yayoi","CC0","https://creativecommons.org/publicdomain/zero/1.0/deed.en"],"osaka:3":["Jikko Knives, Sakai (49070649718).jpg","Stephan Ridgway","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],"osaka:4":["OKU - Stone bridge in Okunoin Cemetery, Koyasan, Japan, 2015.jpg","Josep M. Gracia","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"]};
 var EXC=[
  {name:'Kamikochi',lon:137.64,lat:36.25,go:'matsumoto',lab:[0,-13,'middle']},
  {name:'Shirakawa-go',lon:136.91,lat:36.26,go:'kanazawa',lab:[0,-13,'middle']},
@@ -359,15 +359,18 @@ function render(){
   });
   var s=byId[state.cur],i=STAGES.indexOf(s);
   var shown=s.items.filter(match);
-  var fig=s.photo?'<figure class="hero"><img src="photos/'+s.id+'.jpg" alt="'+esc(s.photo.c)+'" width="960" height="640" onerror="this.closest(\'figure\').hidden=true"><figcaption>'+esc(s.photo.c)+'. Photo : '+esc(s.photo.a)+', <a href="'+s.photo.lu+'" target="_blank" rel="noopener">'+s.photo.l+'</a>, <a href="https://commons.wikimedia.org/wiki/File:'+s.photo.f+'" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure>':'';
-  var h='<div class="headrow"><div class="ph"><div class="bignum">'+s.n+'</div><div><h2>'+esc(s.name)+'<span>'+s.jp+'</span></h2>'
-   +'<div class="meta"><span><b>'+esc(s.dates)+'</b></span><span>'+s.nights+(s.nights>1?' nuits':' nuit')+'</span><span>'+esc(s.from)+'</span></div></div></div>'+fig+'</div>';
+  var h='<div class="ph"><div class="bignum">'+s.n+'</div><div><h2>'+esc(s.name)+'<span>'+s.jp+'</span></h2>'
+   +'<div class="meta"><span><b>'+esc(s.dates)+'</b></span><span>'+s.nights+(s.nights>1?' nuits':' nuit')+'</span><span>'+esc(s.from)+'</span></div></div></div>';
   if(shown.length){
     h+='<div class="items">'+shown.map(function(it){
-      var d=DOM[it.d];
-      return '<article class="it" style="--c:'+d.c+'"><div class="top"><span class="dom">'+d.n+'</span>'
+      var d=DOM[it.d],ph=PH[s.id+':'+s.items.indexOf(it)],pic='',cr='';
+      if(ph){
+        pic='<div class="pic"><img src="photos/items/'+s.id+'-'+s.items.indexOf(it)+'.jpg" alt="'+esc(it.t)+'" width="640" height="427" loading="lazy" onerror="this.parentNode.hidden=true"></div>';
+        cr='<div class="cr">Photo : '+(ph[1]?esc(ph[1])+', ':'')+'<a href="'+ph[3]+'" target="_blank" rel="noopener">'+esc(ph[2])+'</a>, <a href="https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(ph[0].replace(/ /g,'_'))+'" target="_blank" rel="noopener">Wikimedia Commons</a></div>';
+      }
+      return '<article class="it" style="--c:'+d.c+'">'+pic+'<div class="top"><span class="dom">'+d.n+'</span>'
        +(it.ev?'<span class="tag ev">'+esc(it.ev)+'</span>':'')+(it.h?'<span class="tag">Moins connu</span>':'')+'</div>'
-       +'<h3>'+esc(it.t)+'</h3><p>'+esc(it.x)+'</p></article>';
+       +'<h3>'+esc(it.t)+'</h3><p>'+esc(it.x)+'</p>'+cr+'</article>';
     }).join('')+'</div>';
   } else {
     h+='<div class="empty">Aucun lieu de cette catégorie à cette étape. Choisissez « Tout » ou une autre étape.</div>';
